@@ -1,0 +1,292 @@
+/* Custom Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loader */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.loader-spinner {
+  width: 60px;
+  height: 60px;
+  border: 8px solid rgba(255, 255, 255, 0.2);
+  border-top: 8px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.95), rgba(102, 16, 242, 0.95));
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 20px !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #fff !important;
+  transition: transform 0.3s;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  margin-right: 20px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #ffc107;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* Home Section */
+#home {
+  background: url('/static/images/background.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+#home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+#home .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* About Section */
+#about img {
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
+}
+
+#about img:hover {
+  transform: scale(1.05);
+}
+
+/* Services Section */
+.service-card {
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Styling */
+#uploadForm {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#uploadForm:hover {
+  transform: translateY(-5px);
+}
+
+#fileInput {
+  border-radius: 10px;
+  padding: 12px;
+  border: 2px solid #0d6efd;
+  transition: border-color 0.3s, box-shadow 0.3s ease;
+}
+
+#fileInput:focus {
+  border-color: #6610f2;
+  box-shadow: 0 0 8px rgba(102, 16, 242, 0.3);
+  outline: none;
+}
+
+/* Button Hover Effect */
+#uploadForm button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#uploadForm button:hover {
+  background-color: #6610f2;
+  transform: scale(1.05);
+}
+
+#uploadForm button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+#uploadForm button:hover::before {
+  left: 0;
+}
+
+/* Loading Spinner & Progress Bar */
+#loading .spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.25rem;
+}
+
+#progressBar {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#progressFill {
+  width: 0;
+  height: 100%;
+  background-color: #0d6efd;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+
+/* Progress Bar */
+#progressBar {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#progressFill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  transition: width 0.3s ease;
+}
+
+/* Analysis Result */
+#analysisResult {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  padding: 2rem 0;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #0d6efd, #6610f2); /* Blue scrollbar thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+}
