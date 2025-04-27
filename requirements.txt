@@ -3,3 +3,4 @@ Werkzeug
 Pillow
 google-generativeai
 python-dotenv
+gunicorn
