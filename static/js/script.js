@@ -76,3 +76,13 @@ form.addEventListener('submit', async (e) => {
     }, 500);
   }
 });
+
+function highlightBricksUnits() {
+    const analysisText = document.getElementById('analysisText');
+    let text = analysisText.innerHTML;
+
+    // Highlight "brick" or "bricks" (case insensitive)
+    const highlightedText = text.replace(/(bricks?|Bricks?)/g, '<span style="background-color: yellow; font-weight: bold;">$1</span>');
+
+    analysisText.innerHTML = highlightedText;
+}
